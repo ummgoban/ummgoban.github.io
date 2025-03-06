@@ -28,6 +28,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: setting git config
+        run: |
+          git config --global user.email "uoscapstone2024@gmail.com"
+          git config --global user.name "github-actions"
+
       - name: Set Yarn Version
         id: set-version
         run: |
