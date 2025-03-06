@@ -35,6 +35,12 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
+
+      - name: Set Yarn Version
+        id: set-version
+        run: |
+          yarn set version 4.7.0
+
       - name: Install dependencies
         run: yarn ci
       - name: Build
