@@ -2,7 +2,7 @@ import { Markdown } from '@/components';
 
 const PrivacyPage = () => {
   return (
-    <div className="container mx-auto p-4 h-screen">
+    <div className="container mx-auto p-4 min-h-screen">
       <Markdown>
         {`# 개인정보이용방침
 
