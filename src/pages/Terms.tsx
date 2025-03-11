@@ -4,11 +4,12 @@ const TermsPage = () => {
   return (
     <div className="container mx-auto p-4 min-h-screen">
       <Markdown>
-        {`# 이용약관
+        {`
+# 이용약관
 
 **이용약관 (Terms of Service)**
 
-최종 업데이트: [YYYY-MM-DD]
+최종 업데이트: [2025-03-11]
 
 ### 1. 목적
 
@@ -54,7 +55,8 @@ const TermsPage = () => {
 
 본 약관은 해당 국가의 법률에 따라 규율되며, 분쟁 발생 시 관할 법원에서 해결됩니다.
 
-[문의 사항] 문의 사항이 있는 경우 [연락처]를 통해 회사에 문의할 수 있습니다.`}
+[문의 사항] 문의 사항이 있는 경우 [연락처]를 통해 회사에 문의할 수 있습니다.
+`}
       </Markdown>
     </div>
   );
