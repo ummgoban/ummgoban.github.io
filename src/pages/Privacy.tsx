@@ -46,7 +46,7 @@ const PrivacyPage = () => {
 
 - 이름: 김영민
 - 직책: 대표
-- 이메일: 
+- 이메일: [momchanpick@gmail.com](mailto:momchanpick@gmail.com)
 
 **제5조** (권익침해 구제방법) 개인정보 침해에 대한 피해구제 및 상담은 다음 기관에 문의하실 수 있습니다.
 
