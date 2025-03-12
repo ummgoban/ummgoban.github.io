@@ -2,8 +2,8 @@ import { Markdown } from '@/components';
 
 const HomePage = () => {
   return (
-    <main className="container mx-auto h-screen flex flex-col">
-      <div className="flex flex-col gap-2 mb-4">
+    <main className="container mx-auto min-h-screen flex flex-col p-4">
+      <div className="flex flex-col gap-2 my-4">
         <h1 className="text-3xl text-bold">맘찬픽: 엄고반</h1>
         <p>소비 기한이 임박한 반찬을 구매하고 픽업하세요!</p>
       </div>

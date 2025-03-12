@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-gray-500 py-8 mt-auto">
       <div className="flex flex-col">
-        <div className="container mx-auto px-4 grid sm:grid-cols-3 sm:grid-rows-1 grid-rows-3 grid-cols-1">
+        <div className="container mx-auto p-4 gap-2 grid sm:grid-cols-3 sm:grid-rows-1 grid-rows-3 grid-cols-1">
           <FooterItem title="고객지원">
             <ul className="space-y-2">
               <li className="flex space-x-4">
