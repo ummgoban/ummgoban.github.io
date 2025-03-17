@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "packageManager": "yarn@4.7.0",
-  "homepage": "https://ummgoban.github.io",
+  "homepage": "https://ummgoban.com",
   "scripts": {
     "dev": "vite",
     "lint": "eslint .",
