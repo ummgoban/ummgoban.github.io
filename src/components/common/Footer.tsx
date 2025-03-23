@@ -41,7 +41,7 @@ const Footer = () => {
               <li className="flex space-x-4"></li>
             </ul>
           </FooterItem>
-          <FooterItem title="Conenect Us">
+          <FooterItem title="Connect Us">
             <ul className="space-y-2">
               <li className="flex space-x-4">
                 <a
