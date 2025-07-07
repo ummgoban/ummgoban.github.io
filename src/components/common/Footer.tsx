@@ -1,5 +1,28 @@
 import { Mail } from 'lucide-react';
 
+import {
+  PRODUCT_URL_ADMIN_ANDROID,
+  PRODUCT_URL_ADMIN_IOS,
+  PRODUCT_URL_CUSTOMER_ANDROID,
+  PRODUCT_URL_CUSTOMER_IOS,
+} from '@/lib/constants/url';
+
+const SERVICE = {
+  customer: {
+    ios: PRODUCT_URL_CUSTOMER_IOS,
+    android: PRODUCT_URL_CUSTOMER_ANDROID,
+  },
+  admin: {
+    ios: PRODUCT_URL_ADMIN_IOS,
+    android: PRODUCT_URL_ADMIN_ANDROID,
+  },
+} as const;
+
+const SERVICE_NAME = {
+  customer: '맘찬픽 - 반찬가기',
+  admin: '맘찬픽: 사장님',
+} as const;
+
 const FooterItem = ({ children, title }: { title: string; children: React.ReactNode }) => {
   return (
     <div className="flex flex-col gap-4">
@@ -36,7 +59,20 @@ const Footer = () => {
           </FooterItem>
           <FooterItem title="서비스">
             <ul className="space-y-2">
-              <li className="flex space-x-4"></li>
+              {Object.entries(SERVICE).map(([key, value]) =>
+                Object.entries(value).map(([platform, url]) => (
+                  <li className="flex space-x-4">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black-800 underline hover:text-black-600 hover:underline cursor-pointer"
+                    >
+                      {`${SERVICE_NAME[key as keyof typeof SERVICE_NAME]} (${platform})`}
+                    </a>
+                  </li>
+                )),
+              )}
             </ul>
           </FooterItem>
           <FooterItem title="Connect Us">
