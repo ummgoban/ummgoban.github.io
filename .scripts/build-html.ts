@@ -1,8 +1,29 @@
-<!doctype html>
+import fs from 'fs';
+import path from 'path';
+
+import { render } from '../src/entry-server';
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+const manifestPath = path.resolve(__dirname, '../dist/.vite/manifest.json');
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+
+const entry = manifest['src/entry-client.tsx'];
+const jsFile = entry?.file;
+const cssFiles = entry?.css || [];
+
+console.log('manifest js:', jsFile);
+console.log('manifest css:', cssFiles);
+
+const cssLinks = cssFiles.map((href: string) => `<link rel="stylesheet" href="./${href}">`).join('\n');
+
+const jsScript = jsFile ? `<script type="module" src="./${jsFile}"></script>` : '';
+
+const html = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>맘찬픽</title>
     <script type="text/javascript">
@@ -37,9 +58,13 @@
         }
       })(window.location);
     </script>
+    ${cssLinks}
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/entry-client.tsx"></script>
+    <div id="root">${render()}</div>
+    ${jsScript}
   </body>
-</html>
+</html>`;
+
+fs.writeFileSync(path.resolve(__dirname, '../dist/index.html'), html);
+console.log('✅ Static HTML generated.');

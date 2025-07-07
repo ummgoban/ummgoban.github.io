@@ -1,5 +1,3 @@
-import { Link } from 'react-router';
-
 import { Mail } from 'lucide-react';
 
 const FooterItem = ({ children, title }: { title: string; children: React.ReactNode }) => {
@@ -19,20 +17,20 @@ const Footer = () => {
           <FooterItem title="고객지원">
             <ul className="space-y-2">
               <li className="flex space-x-4">
-                <Link
-                  to="/terms"
+                <a
+                  href="/terms"
                   className="text-black-800 underline hover:text-black-600 hover:underline cursor-pointer"
                 >
                   서비스 이용약관
-                </Link>
+                </a>
               </li>
               <li className="flex space-x-4">
-                <Link
-                  to="/privacy"
+                <a
+                  href="/privacy"
                   className="text-black-800 underline hover:text-black-600 hover:underline cursor-pointer"
                 >
                   개인정보 처리방침
-                </Link>
+                </a>
               </li>
             </ul>
           </FooterItem>
@@ -55,7 +53,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex space-x-4">
-                <Link to="https://github.com/ummgoban" className="text-black-800 hover:text-black-600 cursor-pointer">
+                <a href="https://github.com/ummgoban" className="text-black-800 hover:text-black-600 cursor-pointer">
                   <div className="flex gap-2">
                     <svg
                       role="img"
@@ -70,7 +68,7 @@ const Footer = () => {
                     </svg>
                     Github
                   </div>
-                </Link>
+                </a>
               </li>
             </ul>
           </FooterItem>
