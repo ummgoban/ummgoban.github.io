@@ -22,6 +22,16 @@ const Markdown = ({ children }: { children: string }) => {
           td: ({ children }) => <td className="border px-4 py-2">{children}</td>,
           hr: () => <hr className="my-4" />,
           img: ({ src, alt }) => <img src={src} alt={alt} />,
+          a: ({ href, children }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline cursor-pointer hover:text-gray-600"
+            >
+              {children}
+            </a>
+          ),
         }}
       />
     </article>
