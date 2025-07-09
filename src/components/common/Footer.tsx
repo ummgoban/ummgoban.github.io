@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {Object.entries(SERVICE).map(([key, value]) =>
                 Object.entries(value).map(([platform, url]) => (
-                  <li className="flex space-x-4">
+                  <li className="flex space-x-4" key={url}>
                     <a
                       href={url}
                       target="_blank"
