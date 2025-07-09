@@ -1,0 +1,11 @@
+{
+  "src/entry-client.tsx": {
+    "file": "assets/main-CW998T7h.js",
+    "name": "main",
+    "src": "src/entry-client.tsx",
+    "isEntry": true,
+    "css": [
+      "assets/main-CbeslsZO.css"
+    ]
+  }
+}
