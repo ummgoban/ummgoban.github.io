@@ -23,7 +23,12 @@ const Markdown = ({ children }: { children: string }) => {
           hr: () => <hr className="my-4" />,
           img: ({ src, alt }) => <img src={src} alt={alt} />,
           a: ({ href, children }) => (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline cursor-pointer hover:text-gray-600"
+            >
               {children}
             </a>
           ),
