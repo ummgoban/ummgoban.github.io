@@ -1,5 +1,7 @@
-import { HomePage, PrivacyPage, TermsPage } from '@/pages';
 import { Routes, Route, BrowserRouter, StaticRouter } from 'react-router';
+
+import { HomePage, PrivacyPage, TermsPage } from '@/pages';
+import useIsMounted from '@/hooks/useIsMount';
 
 const Router = () => {
   return (
@@ -12,18 +14,20 @@ const Router = () => {
 };
 
 const RootRouter = () => {
-  if (typeof window !== 'undefined') {
+  const isMounted = useIsMounted();
+
+  if (!isMounted) {
     return (
-      <BrowserRouter>
+      <StaticRouter location={'/'}>
         <Router />
-      </BrowserRouter>
+      </StaticRouter>
     );
   }
 
   return (
-    <StaticRouter location={'/'}>
+    <BrowserRouter>
       <Router />
-    </StaticRouter>
+    </BrowserRouter>
   );
 };
 
