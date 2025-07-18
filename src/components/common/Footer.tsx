@@ -19,7 +19,7 @@ const SERVICE = {
 } as const;
 
 const SERVICE_NAME = {
-  customer: '맘찬픽 - 반찬가기',
+  customer: '맘찬픽 - 반찬가게',
   admin: '맘찬픽: 사장님',
 } as const;
 
